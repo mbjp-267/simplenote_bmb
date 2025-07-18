@@ -4,7 +4,7 @@ const { Pool } = require('pg'); // koneksi postgreSQL
 const { error } = require('console');
 
 const app = express(); // inisialisasi express
-const PORT = 3000; // port server
+const PORT = process.env.PORT || 3000; // port server
 
 // Middleware
 app.use(cors()); //mengaktifkan cors
