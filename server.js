@@ -88,5 +88,5 @@ try {
 
 //output lewat terminal
 app.listen(PORT, () => {
-    console.log('Server running on http://localhost:3000');
+    console.log(`Server running on port ${PORT}`);
 });
