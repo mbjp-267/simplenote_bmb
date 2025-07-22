@@ -12,11 +12,12 @@ app.use(express.json()); //parsing body json
 app.use(express.static('public')); // Untuk server file statis HTML/JS/CSS
 
 const pool = new Pool({
-user: 'postgres',           //username postgre
-host: 'localhost',          //server postgre
-database: 'notedb',         //nama database
-password: 'admin123',       //password
-port: 5432                  //port postgre default
+user: process.env.PGUSER || 'postgres',           //username postgre
+host: process.env.PGHOST || 'localhost',          //server postgre
+database: process.env.PGDATABASE || 'notedb',         //nama database
+password: process.env.PGPASSWORD || 'admin123',       //password
+port: process.env.PGPORT || 5432,                  //port postgre default
+ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
 });
 
 // Endpoint untuk ambil semua catatan dari database
