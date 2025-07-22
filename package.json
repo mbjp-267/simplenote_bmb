@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
-    "start": "node server.js",                              // Perintah untuk menjalankan server menggunakan Node.js dan file server.js
-    "test": "echo \"Error: no test specified\" && exit 1"    // Placeholder script untuk testing, belum di-setup
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],                                  // Kata kunci (tag) untuk mempermudah pencarian di NPM, masih kosong
-  "author": "",                                    // Nama pembuat aplikasi, masih kosong
-  "license": "ISC",                                // Jenis lisensi proyek (ISC = sangat permisif, seperti MIT)
-  "description": "",                               // Deskripsi singkat proyek, masih kosong
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
-    "cors": "^2.8.5",                        // Middleware untuk mengizinkan request lintas domain (Cross-Origin Resource Sharing)
-    "express": "^5.1.0",                     // Framework Node.js minimalis untuk membuat REST API / server
-    "pg": "^8.16.3"                          // PostgreSQL client untuk Node.js, digunakan untuk menghubungkan ke database PostgreSQL
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
   }
 }
