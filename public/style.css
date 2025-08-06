@@ -1,0 +1,274 @@
+/* warna utama dan kategori */
+:root {
+  --primary-color: #1976d2;
+  --primary-dark: #0d47a1;
+  --danger-color: #d32f2f;
+  --warn-color: #ffa000;
+  --success-color: #388e3c;
+}
+
+body {
+  background: #dcdcdc;
+  color: #333;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 1rem 20px;
+  background-image: url('bg.png');
+  background-repeat: repeat;
+  background-size: auto;
+  background-size: 300px 300px;
+  background-position: center;
+  background-attachment: fixed; /* opsional: biar nggak ikut scroll */
+}
+
+/* mode gelap */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+/* elemen input saat dark mode */
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode select:focus {
+  outline: none;
+  border-color: #777;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+/* catatan dalam dark mode */
+.dark-mode .note {
+  background-color: #2b2b2b;
+  border: 1px solid #444;
+}
+
+/* judul utama */
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: "Indie Flower", cursive;
+  font-weight: 800;
+}
+
+/* baris filter */
+.filter-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+/* ukuran input filter */
+.filter-row input,
+.filter-row select {
+  flex: 1;
+}
+
+/* styling form dan kontrol */
+form,
+.controls {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  background: rgb(255, 191, 0);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.341);
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+form input,
+form select,
+form textarea,
+form button {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+}
+
+/* style umum input */
+input[type="text"],
+input[type="date"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.4rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* tombol umum */
+button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.4rem;
+  margin-top: 0.5rem;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--primary-color);
+}
+
+/* warna tombol khusus */
+button.delete {
+  background: var(--danger-color);
+}
+button.edit {
+  background: var(--warn-color);
+}
+button.pin {
+  background: var(--success-color);
+}
+button:hover {
+  background: var(--primary-dark);
+}
+
+/* style note card */
+.note {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 1rem auto;
+  position: relative;
+  border-left: 6px solid;
+  border-radius: 6px;
+  max-width: 600px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.note h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.note p {
+  margin: 0.2rem 0;
+}
+
+/* overlay password */
+#passwordOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  text-align: center;
+  padding: 2rem;
+}
+
+#passwordOverlay input {
+  width: 250px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+#passwordOverlay button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  background: var(--primary-color);
+  color: white;
+  cursor: pointer;
+}
+
+/* gaya responsif */
+@media (max-width: 600px) {
+  body {
+    background-image: url('bg.png');
+    background-repeat: repeat;
+    background-size: 60px 60px;
+  }
+
+  form, .controls, .note {
+    padding: 0.8rem;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  button:not(:last-child) {
+    margin-right: 0;
+  }
+}
+
+/* tombol kontrol bar */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.controls button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.controls button:hover {
+  background: var(--primary-dark);
+}
+
+/* penyesuaian spacing elemen setelah kontrol */
+.controls + input,
+.controls + select,
+.controls + .filter {
+  margin-bottom: 0.8rem;
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* styling untuk dafatr to-do */
+#todoList {
+  margin-top: 1rem;
+}
+
+#todoList ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#todoList li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 4px 0;
+}
+
+#todoList li.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+#todoList li span {
+  flex: 1;
+  cursor: pointer;
+}

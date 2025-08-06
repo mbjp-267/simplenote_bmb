@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- overlay login -->
+    <div id="passwordOverlay" style="
+    position: fixed; inset: 0;
+    background: rgba(0, 0, 0, 0.63);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+">
+    <h2>Masukkan Password</h2>
+    <input type="password" id="passwordInput" placeholder="Password">
+    <button id="passwordSubmit">Masuk</button>
+    <p id="passwordError" style="color: red; display: none;">Password salah</p>
+</div>
+
+    <h1>Simple Notes</h1> <!-- judul -->
+    
+    <!-- tombol-tombol kontrol -->
+    <div class="controls">
+    <button id="toggleDarkMode">🌙</button> <!-- saklar dark mode-->
+    <button id="exportBtn">⬇️</button> <!-- ekspor -->
+    <button id="importBtn">📁</button> <!-- impor -->
+    <button id="changePasswordBtn">Ganti 🔑</button> <!--change password-->
+</div>
+
+    <input type="file" id="importInput" accept=".json" style="display: none;"> <!--input sekaligus impor file .json-->
+    
+    <!-- Filter pencarian -->
+    <div class="filter-row">
+    <input type="text" id="searchInput" placeholder="Cari catatan...">
+    <input type="date" id="dateFilter" />
+    <select id="categoryFilter">
+    <option value="">Semua Kategori</option>
+        <option value="Pribadi">Pribadi</option>
+        <option value="Pekerjaan">Pekerjaan</option>
+        <option value="Belajar">Belajar</option>
+        <option value="Ide">Ide</option>
+    </select>
+</div>
+    
+    <!-- Form untuk membuat note -->
+    <form id="noteForm">
+        <select id="category">
+    <option value="">Tanpa Kategori</option>
+    <option value="Pribadi">Pribadi</option>
+    <option value="Pekerjaan">Pekerjaan</option>
+    <option value="Belajar">Belajar</option>
+    <option value="Ide">Ide</option>
+</select>
+    <input type="text" id="title" placeholder="Judul catatan" required>
+    <textarea id="content" placeholder="Isi catatan..." required></textarea>
+
+    <!-- to-do list dalam note -->
+<div id="todoList">
+    <input type="text" id="todoInput" placeholder="Tambah item to-do...">
+    <button type="button" id="addTodoBtn">✚</button>
+    <ul id="todoItems"></ul>
+</div>
+
+    <button type="submit">💾</button>
+    </form>
+
+    <!-- container tempat menampilkan daftar catatan -->
+    <div id="notesContainer"></div>
+
+    <!-- skrip js -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+Tambah catatan baru
+
+###
+POST http://localhost:3000/notes
+Content-Type: application/json
+
+{
+  "title": "Catatan dari REST Client",
+  "content": "Isi catatan tes",
+  "category": "Tes",
+  "pinned": true,
+  "todos": [
+    { "text": "Checklist A", "done": false }
+  ]
+}
+
+Melihat semua catatan
+###
+GET http://localhost:3000/notes
