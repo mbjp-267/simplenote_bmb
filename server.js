@@ -18,6 +18,11 @@ connectionString: 'postgresql://postgres:kdjOwjqmIdtWQdWFrqqRbGINhYeeHkvV@interc
   }
 });
 
+pool.connect()
+  .then(() => console.log("✅ Connected to Railway PostgreSQL"))
+  .catch(err => console.error("❌ Failed to connect to Railway PostgreSQL:", err));
+
+
 // Endpoint untuk ambil semua catatan dari database
 app.get('/notes', async (req, res) => {
     try {
