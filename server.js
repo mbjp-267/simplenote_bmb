@@ -12,11 +12,10 @@ app.use(express.json()); //parsing body json
 app.use(express.static('public')); // Untuk server file statis HTML/JS/CSS
 
 const pool = new Pool({
-user: 'postgres',           //username postgre
-host: 'localhost',          //server postgre
-database: 'notedb',         //nama database
-password: 'admin123',       //password
-port: 5432                  //port postgre default
+connectionString: 'postgresql://postgres:kdjOwjqmIdtWQdWFrqqRbGINhYeeHkvV@interchange.proxy.rlwy.net:46173/railway',
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 // Endpoint untuk ambil semua catatan dari database
